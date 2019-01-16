@@ -1,7 +1,2 @@
-﻿  sdlinit.cpp
-c:\development\2d_dr4wer\2d_dr4wer\sdlinit.cpp(11): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
-c:\development\2d_dr4wer\2d_dr4wer\sdlinit.cpp(17): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
-c:\development\2d_dr4wer\2d_dr4wer\sdlinit.cpp(18): warning C4305: 'return': truncation from 'int' to 'bool'
-c:\development\2d_dr4wer\2d_dr4wer\sdlinit.cpp(23): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
-c:\development\2d_dr4wer\2d_dr4wer\sdlinit.cpp(24): warning C4305: 'return': truncation from 'int' to 'bool'
-  2d_dr4wer.vcxproj -> C:\development\2d_dr4wer\\bin\Debug\Win32\2d_dr4wer.exe
+﻿  main.cpp
+  2d_dr4wer.vcxproj -> C:\development\github\vizualizer\2d_dr4wer\\bin\Debug\Win32\2d_dr4wer.exe

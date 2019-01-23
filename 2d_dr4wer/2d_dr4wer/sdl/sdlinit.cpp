@@ -5,6 +5,8 @@ namespace dr4wer {
 	SDL_Renderer *renderer = nullptr;
 	int window_width = 0;
 	int window_height = 0;
+	int view_point_x = 0;
+	int view_point_y = 0;
 	bool quit = false;
 
 	bool sdl_init(int _window_width, int _window_height, const char *title) {
@@ -34,6 +36,16 @@ namespace dr4wer {
 			if (event.type == SDL_QUIT) {
 				quit = true;
 			}
+			if (event.type = SDL_KEYDOWN) {
+				if (event.key.keysym.scancode == SDL_SCANCODE_LEFT) {
+					if (view_point_x != 0) {
+						view_point_x -= 10;
+					}
+				}
+				else if (event.key.keysym.scancode == SDL_SCANCODE_RIGHT) {
+					view_point_x += 10;
+				}
+			}
 		}
 	}
 	void render() {
@@ -49,6 +61,6 @@ namespace dr4wer {
 	}
 	void drawpoint(int pointpositionX, int pointpositionY) {
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-		SDL_RenderDrawPoint(renderer, pointpositionX, pointpositionY);
+		SDL_RenderDrawPoint(renderer, pointpositionX - view_point_x, pointpositionY - view_point_y);
 	}
 }

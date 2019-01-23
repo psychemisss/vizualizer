@@ -10,6 +10,8 @@ namespace dr4wer {
 	extern SDL_Renderer *renderer;
 	extern int window_width;
 	extern int window_height;
+	extern int view_point_x;
+	extern int view_point_y;
 	extern bool quit;
 	//Functions
 	bool sdl_init(int window_width, int window_height, const char *title);

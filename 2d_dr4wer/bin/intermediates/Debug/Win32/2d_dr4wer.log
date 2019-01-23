@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  sdlinit.cpp
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\sdl\sdlinit.cpp(14): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\sdl\sdlinit.cpp(20): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\sdl\sdlinit.cpp(28): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
   2d_dr4wer.vcxproj -> C:\development\github\vizualizer\2d_dr4wer\\bin\Debug\Win32\2d_dr4wer.exe

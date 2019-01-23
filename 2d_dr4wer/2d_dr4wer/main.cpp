@@ -9,11 +9,11 @@ struct dot {
 int main(int argc, char *argv[]) {
 	dot current_dot;
 	dot previous_dot;
-	const int dot_array_size = 50;
+	const int dot_array_size = 150;
 	dot dot_array[dot_array_size];
 	dr4wer::sdl_init(640, 480, "dr4wer");
 	for (int i = 0; i < dot_array_size; i++) {
-		dot_array[i].x = i * (dr4wer::window_width / dot_array_size);
+		dot_array[i].x = i * i;
 		dot_array[i].y = rand() % (3 + dr4wer::window_height);
 	}
 	while (!dr4wer::quit) {
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 			if (i != 0) {
 				previous_dot = current_dot;
 				current_dot = dot_array[i];
-				SDL_RenderDrawLine(dr4wer::renderer, previous_dot.x, previous_dot.y, current_dot.x, current_dot.y);
+				SDL_RenderDrawLine(dr4wer::renderer, previous_dot.x - dr4wer::view_point_x, previous_dot.y, current_dot.x - dr4wer::view_point_x, current_dot.y);
 			}
 		}
 		dr4wer::render();

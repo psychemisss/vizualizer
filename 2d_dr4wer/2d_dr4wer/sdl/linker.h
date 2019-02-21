@@ -4,20 +4,13 @@
 #include <SDL.h>
 
 #define NULL 0
-namespace dr4wer {
 	//Variables
-	extern SDL_Window *window;
-	extern SDL_Renderer *renderer;
-	extern int window_width;
-	extern int window_height;
-	extern int view_point_x;
-	extern int view_point_y;
-	extern bool quit;
+extern double view_point_x;
+extern double view_point_y;
+extern bool quit;
 	//Functions
-	bool sdl_init(int window_width, int window_height, const char *title);
-	void handle_events();
-	void render();
-	void close();
-	void drawpoint(int pointpositionX, int pointpositionY);
-}
+bool sdl_init(SDL_Window **window, SDL_Renderer **renderer, SDL_Surface **src, SDL_Surface **dest, int window_width, int window_height, const char *title);
+void handle_events();
+void render(SDL_Renderer *renderer);
+void close(SDL_Window *window, SDL_Renderer *renderer);
 

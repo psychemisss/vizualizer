@@ -7,14 +7,17 @@
 
 #define ERROR_MSG_SIZE 128
 
-int arr1[4];
-double arr2[4];
-double arr3[4];
+const int arr_size = 2095;
+double arr1[arr_size];
+double arr2[arr_size];
+double arr3[arr_size];
 int number_count = 0;
+int arr_counter = 0;
+double absolute_array[arr_size * 3];
 
 struct dot {
-	double x = 0;
-	double y = 0;
+	int x = 0;
+	int y = 0;
 };
 
 void fatal(char* msg) {
@@ -40,29 +43,20 @@ void usage(char *program_name, char *filename) {
 	exit(0);
 }
 
-void get_number(FILE *file) {
-	for (int i = 0; i < 12; i++) {
-		if (number_count == 0) {
-			fscanf(file, "%d, ", &arr1[i]);
-			printf("Arr1 %d\n", arr1[i]);
-		}
-		else if (number_count == 1) {
-			fscanf(file, "%lf, ", &arr2[i]);
-			printf("Arr2 %lf\n", arr2[i]);
-		}
-		else if (number_count == 2) {
-			fscanf(file, "%lf, ", &arr3[i]);
-			printf("Arr3 %lf\n", arr3[i]);
-		}
-		number_count++;
-		if (number_count > 2) {
-			number_count = 0;
-		}
+void get_number(FILE *file, double *arr, int collum_number) {
+	for (int i = 0; i < arr_size * 3; i++) {
+		fscanf(file, "%lf ", &absolute_array[i]);
 	}
+	for (int j = collum_number; j < arr_size; j += 3) {
+		arr[arr_counter] = absolute_array[j];
+		printf("%lf\n", arr[arr_counter]);
+		arr_counter++;
+	}
+	arr_counter = 0;
 }
 
 int main(int argc, char *argv[]) {
-	FILE *f = fopen("assets/testing.dat", "r");
+	FILE *f = fopen("assets/test_data.dat", "r");
 	SDL_Window *window = nullptr;
 	SDL_Renderer *renderer = nullptr;
 	SDL_Surface *src = nullptr;
@@ -73,7 +67,9 @@ int main(int argc, char *argv[]) {
 	if (!f)
 		printf("SUKAAAAA");
 	else {
-		get_number(f);
+		get_number(f, arr1, 0);
+		get_number(f, arr2, 1);
+		get_number(f, arr3, 2);
 		fclose(f);
 	}
 	//SDL setup
@@ -84,20 +80,20 @@ int main(int argc, char *argv[]) {
 	//Window loop
 	while (!quit) {
 		handle_events();
-		current_point.x = arr2[0] * 10000;
-		current_point.y = arr3[0] * 10000;
-		for (int i = 0; i < 4; i++) {
+		current_point.x = arr2[0];
+		current_point.y = window_height - arr3[0];
+		for (int i = 0; i < arr_size; i++) {
 			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-			SDL_RenderDrawPoint(renderer, current_point.x, current_point.y);
+			SDL_RenderDrawPoint(renderer, current_point.x - view_point_x, current_point.y);
 			if (i != 0) {
 				previous_point = current_point;
-				current_point.x = arr2[i] * 10000;
-				current_point.y = arr3[i] * 10000;
-				SDL_RenderDrawLine(renderer, previous_point.x, previous_point.y, current_point.x, current_point.y);
+				current_point.x = arr2[i];
+				current_point.y = window_height - arr3[i];
+				SDL_RenderDrawLine(renderer, previous_point.x -view_point_x, previous_point.y, current_point.x - view_point_x, current_point.y);
 			}
 		}
-		render(renderer);
+		render(&renderer);
 	}
-	close(window, renderer);
+	close(&window, &renderer);
 	return 0;
 }

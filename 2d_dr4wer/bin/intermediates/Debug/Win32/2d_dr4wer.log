@@ -1,5 +1,9 @@
-﻿  sdlinit.cpp
-c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\sdl\sdlinit.cpp(14): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
-c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\sdl\sdlinit.cpp(20): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
-c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\sdl\sdlinit.cpp(28): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'const char *'
+﻿  main.cpp
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(1): warning C4081: expected '('; found 'newline'
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(81): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(82): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(85): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(88): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(89): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\development\github\vizualizer\2d_dr4wer\2d_dr4wer\main.cpp(90): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   2d_dr4wer.vcxproj -> C:\development\github\vizualizer\2d_dr4wer\\bin\Debug\Win32\2d_dr4wer.exe
